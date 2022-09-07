@@ -1,0 +1,39 @@
+{% load static %}
+<nav class="nav">
+    <div class="logo">
+        <a href="{% url 'index' %}">
+            <img src="{% static '/imgs/logo1.png' %}" alt="logo-1">
+        </a>
+    </div>
+    <div class="menu d-none d-md-block">
+        <ul class="main-menu">
+            <li><a href="{% url 'index' %}">INICIO</a></li>
+            <li><a href="{% url 'ventas' %}">VENTAS</a></li>
+            <li><a href="{% url 'alquileres' %}">ALQUILERES</a></li>
+            <li><a href="https://wa.me/5493624684641/?text=Quisiera%20consultar%20por%20las%20propiedades%20disponibles" target="_blank">CONTACTO</a></li>
+        </ul>
+    </div>
+    <div class="logo img2">
+        <a href="https://colegioinmobiliariochaco.com/" target="_blank">
+            <img src="{% static '/imgs/MARCA-CCICH-12.png' %}" alt="CCICH">
+        </a>
+    </div>
+    <button class="btn_menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="bi bi-list"></i>
+    </button>
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menú</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="offbody">
+            <ul class="offmenu">
+                <li><a href="{% url 'index' %}">INICIO</a></li>
+                <li><a href="{% url 'ventas' %}">VENTAS</a></li>
+                <li><a href="{% url 'alquileres' %}">ALQUILERES</a></li>
+                <li><a href="https://wa.me/5493624684641/?text=Quisiera%20consultar%20por%20las%20propiedades%20disponibles" target="_blank">CONTACTO</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

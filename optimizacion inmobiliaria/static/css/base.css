@@ -1,0 +1,34 @@
+.imagen{
+    width: 100vw;
+    height: 60vw;
+    background-image: url(../imgs/pexels-get-lost-mike-5724030.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #ccc;
+}
+.filtros{
+    display: inline-block;
+    width: 70vw;
+}
+@media screen and (max-width: 858px){
+.imagen{
+        background-image: url(../imgs/Captura2.PNG);
+        background-size: inherit;
+    }
+}
+.wrap {
+    padding: .5rem;
+}
+.card{
+    margin-bottom: .1rem;
+}
+.modulo-header {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+}

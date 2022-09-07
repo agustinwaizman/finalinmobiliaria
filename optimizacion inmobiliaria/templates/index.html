@@ -1,0 +1,75 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+{% block content %}
+<section class="home">
+        <div class="imagen">
+            <div class="filtros">
+                <form method="GET" action="{% url 'index' %}">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Buscar..." id="name" name="buscar">
+                        <button type="submit" class="btn btn-success"><i class="fa-solid fa-magnifying-glass-location"></i> Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modulo-header">
+            <h2>ESTAS SON NUESTRAS PROPIEDADES <strong>DISPONIBLES</strong></h2>
+        </div>
+    </div>
+    <div class="wrap">
+        {% for propiedad in propiedades %}
+        <div class="card lg-4" style="max-width: 1340px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <a href="{% url 'propiedad_view' id=propiedad.id %}">
+                        <img src="{{propiedad.imagen1.url}}" class="img-fluid rounded-start" style="max-height: 15rem;"alt="...">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ propiedad.nombre }}</h5>
+                        <p class="card-text">{{ propiedad.descripcion_corta }}</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-muted"><i class="bi bi-geo-alt-fill"></i> {{ propiedad.ubicacion }}</p>
+                    <p class="text-muted"><i class="fa-solid fa-bed"></i> {{ propiedad.ambientes }}  Ambientes</p>
+                    {% if propiedad.en_alquiler == True %}
+                    <p class="text-muted">En alquiler</p>
+                    {% else %}
+                    <p class="text-muted">En venta</p>
+                    {% endif %}
+                    <p class="text-muted">${{ propiedad.precio }}</p>
+                    <small class="text-muted"><i class="bi bi-calendar3"></i> {{ propiedad.fecha }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% for terreno in terrenos %}
+        <div class="card lg-4" style="max-width: 1340px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <a href="{% url 'terreno_view' id=terreno.id %}">
+                        <img src="{% static 'imgs/terreno.png' %}" class="img-fluid rounded-start" style="max-height: 15rem;"alt="...">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ terreno.nombre }}</h5>
+                        <p class="card-text">{{ terreno.descripcion_corta }}</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-muted"><i class="bi bi-geo-alt-fill"></i> {{ terreno.ubicacion }}</p>
+                    <p class="text-muted">${{ terreno.precio }}</p>
+                    <small class="text-muted"><i class="bi bi-calendar3"></i> {{ terreno.fecha }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+{% block content %}
+<div style="height: 5rem;"></div>
+{% include 'layouts/partials/slider.html' %}
+<section class="home">
+    <div class="container">
+        <div class="modulo-header">
+            <h2>PROPIEDADES Y TERRENOS <strong>EN VENTA</strong></h2>
+        </div>
+    </div>
+    <div class="wrap">
+        {% for propiedad in propiedades %}
+        <div class="card lg-4" style="max-width: 1340px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <a href="{% url 'propiedad_view' id=propiedad.id %}">
+                        <img src="{{propiedad.imagen1.url}}" class="img-fluid rounded-start" style="max-height: 15rem;"alt="...">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ propiedad.nombre }}</h5>
+                        <p class="card-text">{{ propiedad.descripcion_corta }}</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-muted"><i class="bi bi-geo-alt-fill"></i> {{ propiedad.ubicacion }}</p>
+                    <p class="text-muted"><i class="fa-solid fa-bed"></i>{{ propiedad.ambientes }}  Ambientes</p>
+                    <p class="text-muted">En venta</p>
+                    <p class="text-muted">U$S {{ propiedad.precio }}</p>
+                    <p class="text-muted"> codigo de publicacion: {{ propiedad.id }}</p>
+                    <small class="text-muted"><i class="bi bi-calendar3"></i> {{ propiedad.fecha }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% for terreno in terrenos %}
+        <div class="card lg-4" style="max-width: 1340px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <a href="{% url 'terreno_view' id=terreno.id %}">
+                        <img src="{% static 'imgs/terreno.png' %}" class="img-fluid rounded-start" style="max-height: 15rem;"alt="...">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ terreno.nombre }}</h5>
+                        <p class="card-text">{{ terreno.descripcion_corta }}</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <p class="text-muted"><i class="bi bi-geo-alt-fill"></i> {{ terreno.ubicacion }}</p>
+                    <p class="text-muted">U$S {{ terreno.precio }}</p>
+                    <p class="text-muted"> codigo de publicacion: {{ terreno.id }}</p>
+                    <small class="text-muted"><i class="bi bi-calendar3"></i> {{ terreno.fecha }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

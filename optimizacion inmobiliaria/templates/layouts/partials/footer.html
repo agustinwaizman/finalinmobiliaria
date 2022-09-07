@@ -1,0 +1,37 @@
+{% load static %}
+<footer class="pie-pagina">
+    <div class="grupo-1">
+        <div class="box">
+            <div class="logo-footer">
+                <a href="{% url 'index' %}">
+                    <img src="{% static '/imgs/logo1.png' %}" alt="logo-1">
+                </a>
+            </div>
+        </div>
+        <div class="box">
+            <h2>SOBRE NOSOTROS:</h2>
+            <p><i class="bi bi-building"></i> Juan B. Justo 66 oficina 1°C</p>
+            <p><i class="bi bi-geo-alt-fill"></i> Resistencia, Chaco</p>
+            <p><i class="bi bi-telephone-fill"></i> 3624684641</p>
+            <p><i class="bi bi-envelope-fill"></i><a href="mailto:sebastian.obregon.inmobiliaria@gmail.com"> sebastian.obregon.inmobiliaria@gmail.com</a></p>
+            <p>Matricula N°119</p>
+        </div>
+        <div class="box">
+            <h2>Seguinos</h2>
+            <div class="red-social">
+                <a href="https://m.facebook.com/lo.vendo.338" target="_blank" ><img src="{% static 'imgs/facebook.png' %}" alt="facebook" class="fb-btn"></a></li>
+                <a href="#" target="_blank"><img src="{% static 'imgs/instagram.png' %}" alt="instagram" class="ig-btn"></a></li>
+            </div>
+            <h2 class="dev">Desarrollado por:</h2>
+            <p><strong>Agustin Waizman</strong></p>
+            <div class="red-social">
+                <a href="https://www.linkedin.com/in/agustinwaizman/" class="contact" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/agustinwaizman" class="contact" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/agustinwaizman/" class="contact" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2022 <b>Agustin Waizman</b> - Todos los Derechos Reservados</small>
+    </div>
+</footer>

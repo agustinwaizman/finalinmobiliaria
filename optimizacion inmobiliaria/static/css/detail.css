@@ -1,0 +1,42 @@
+.btn-whatsapp{
+    padding: 10px 20px;
+    border: none;
+    background-color: #25D366;
+    border-radius: 5px;
+    border-bottom: 3px solid #199045;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.btn-whatsapp:hover{
+    transform: translateY(-5px);
+    background-color: #199045;
+    border-bottom: 3px solid #25D366;
+    color: rgb(186, 183, 183);
+    box-shadow: 5px 10px 15px #25d36596;
+}
+.whatsapp{
+    text-decoration: none;
+    color: white;
+}
+.map{
+    height: 40vw;
+    width: 90vw;
+}
+.carousel-inner{
+    border-radius: 10px;
+}
+.mapa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .7rem;
+}
+.mapa-terreno{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .7rem;
+    padding-top: .7rem;
+}

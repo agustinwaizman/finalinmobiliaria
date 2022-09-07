@@ -1,0 +1,22 @@
+{% extends 'layouts/base_tdetail.html' %}
+{% load static %}
+{% block content %}
+<div class="wrap">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ terreno.nombre}}</h5>
+                    <p class="card-text">{{ terreno.descripcion }}</p>
+                    <p class="text-muted"><i class="bi bi-layers-fill"></i> {{ terreno.mtscuadrados }}mts2</p>
+                    <p class="text-muted">Precio: u$s {{ terreno.precio }}</p>
+                    <p class="text-muted"><i class="bi bi-calendar3"></i> {{ terreno.fecha }}</p>
+                    <p class="text-muted"><i class="bi bi-geo-alt-fill"></i> {{ terreno.ubicacion }}</p>
+                    <p class="text-muted"> codigo de publicacion: {{ propiedad.id }}</p>
+                    <a href="https://wa.me/5493624684641/?text=Quisiera%20consultar%20sobre%20la%20oferta%20de%20terreno%20{{terreno.id}}" class="whatsapp" target="_blank"><button class="btn-whatsapp"><i class="bi bi-whatsapp">  CONSULTAR</i></button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

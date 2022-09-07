@@ -1,0 +1,71 @@
+footer{
+    min-height: 4rem;
+    width: 100%;
+    background-color: #ccc;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box .logo-footer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box .logo-footer img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+.pie-pagina .grupo-1 .box p a{
+    text-decoration: none;
+    color: #000000;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 20px;
+    list-style-type: none;
+}
+.pie-pagina .grupo-2{
+    padding: 15px 10px;
+    text-align: center;
+    background-color: #565555;
+}
+.fb-btn{
+    max-width: 2rem;
+}
+.ig-btn{
+    max-width: 2rem;
+}
+.contact{
+    color: #000000;
+    font-size: 2rem;
+    text-decoration-style: none;
+}
+.contact:hover, .contact:link, .contact:visited, .contact:active{
+    color: #000000;
+    text-decoration: none;
+}
+.dev{
+    margin-top: .9rem;
+    font-size: 1.7rem;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 80%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
